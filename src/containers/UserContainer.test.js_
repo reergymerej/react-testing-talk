@@ -1,0 +1,34 @@
+import React from 'react'
+import { shallow } from 'enzyme'
+import UserContainer from './UserContainer'
+
+const defaultProps = {}
+
+const factory = (props = {}) => (
+  <UserContainer.WrappedComponent {...defaultProps} {...props} />
+)
+
+describe('<UserContainer />', () => {
+  describe('<User />', () => {
+    it('should dispatch "onLogin" after "login" is emitted', () => {
+      const onLogin = jest.fn()
+      const wrapper = shallow(factory({ onLogin }))
+      wrapper.find('User').simulate('login')
+      expect(onLogin).toHaveBeenCalled()
+    })
+
+    it('should dispatch "onLogout" after "logout" is emitted', () => {
+      const onLogout = jest.fn()
+      const wrapper = shallow(factory({ onLogout }))
+      wrapper.find('User').simulate('logout')
+      expect(onLogout).toHaveBeenCalled()
+    })
+
+    it('should map the user', () => {
+      const user = 'Princess Belle'
+      const wrapper = shallow(factory({ user }))
+      const comp = wrapper.find('User')
+      expect(comp.prop('user')).toBe(user)
+    })
+  })
+})

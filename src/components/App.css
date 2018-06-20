@@ -1,0 +1,45 @@
+.App {
+}
+
+button {
+  font-size: 1.1em;
+}
+
+.App-header {
+  background-color: #4476b7;
+  color: white;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+}
+
+.App-header .App-title {
+  flex: 1;
+}
+
+.App-header .user {
+}
+
+.RubiksCube {
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  background: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.RubiksCube div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.RubiksCube.complete {
+  background: url(/solved.jpg)
+}
+
+.RubiksCube.incomplete {
+  background: url(/unsolved.jpg)
+}
