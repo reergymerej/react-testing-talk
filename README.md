@@ -26,6 +26,6 @@ benefit.  There are techniques for this that we will discuss.
 * running time
 * complexity
 
-
 **Benefits**
-*
+* confidence
+* TDD - better code structure
