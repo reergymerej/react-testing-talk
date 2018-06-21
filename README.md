@@ -8,7 +8,9 @@ talk.
 
 ## Main Idea
 
-> Tests don't have to be perfect, they just have to add value.
+I've got pages of notes on a yellow pad.  Good stuff!
+
+> Tests don't have to be perfect, they only require a net value.
 
 
 Testing is often presented in a perfect environment.  In reality, people
@@ -29,3 +31,29 @@ benefit.  There are techniques for this that we will discuss.
 **Benefits**
 * confidence
 * TDD - better code structure
+
+
+## Timeline
+
+July 10 - Give talk
+
+July 8 - Practice talk in front of Jason
+July 7 - Practice talk in front of Amanda
+July 6 - Practice talk, with slides (record and rewatch)
+July 5 - Practice talk, with slides (record and rewatch)
+July 4 - Practice talk, with slides (record and rewatch)
+July 3 - Finish final draft
+	develop companion repo code
+	write companion blog
+	create slides
+
+  Rehearse with timer - edit down if needed
+  Rehearse with timer - edit down if needed
+  Rehearse with timer - edit down if needed
+  Rehearse with timer - edit down if needed
+
+June 26 - Finish first draft
+
+June 21 - Brainstorm, outline
+June 20 - Finalize idea
+
