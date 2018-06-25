@@ -1,0 +1,15 @@
+import React from 'react'
+import { shallow } from 'enzyme'
+import Foo from './Foo'
+
+const defaultProps = {}
+
+const factory = (props = {}) => (
+  <Foo {...defaultProps} {...props} />
+)
+
+describe('<Foo />', () => {
+  it('should render', () => {
+    shallow(factory())
+  })
+})

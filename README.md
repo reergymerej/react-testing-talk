@@ -94,6 +94,9 @@ solution.
 
 4. Call to action (This is the meat!)
 * use test templates
+  * pure logic
+  * plain components
+  * HOC
 * keep components at arm's length
 * extract WrappedComponent from HOC
 * mock shit
@@ -120,3 +123,10 @@ structures.
 
 If we can get into it, talk about separating thunks and business logic from
 action creators, reducers, etc.
+
+Learn how to selectively run tests.
+
+If your tests are bite sized, you can add more to a suite with a quick
+copy/paste, find/replace for a method name.
+
+Use silly/random/unique scalars to help you search.

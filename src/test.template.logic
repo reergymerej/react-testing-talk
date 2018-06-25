@@ -1,0 +1,7 @@
+import * as foo from './foo'
+
+describe('foo', () => {
+  it('should be so sweet', () => {
+    // If we got here, the module imported.  What now?
+  })
+})
