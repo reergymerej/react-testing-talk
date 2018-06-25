@@ -57,3 +57,48 @@ June 26 - Finish first draft
 June 21 - Brainstorm, outline
 June 20 - Finalize idea
 
+---
+Mon Jun 25 07:42:50 EDT 2018
+
+
+### Outline
+
+**Thesis** - The longterm benefit to a healthy test suite is widely
+acknowledged, but you need immediate payoff to get there.  There are techniques
+to tip the scales.
+
+We are not focusing on "it's hard to get started test," that's just a minor
+point.  We are focusing on "here's how to make testing more beneficial."
+
+
+Elaborate on the logic behind incentive.  Don't dwell too long, but pull in the
+human factor so people get a break from the tech.  Relate to them so they care.
+This is a sales pitch.  They need to understand the problem so they can buy the
+solution.
+
+
+1. Make them care
+* It's hard to test like they do in the movies.
+* You're a good guy, you want to do the right thing.
+
+2. Explain idea
+* Cost/benefit
+* The test suite will develop a type of inertia as it grows.  It is most
+  important to lessen costs at the very beginning.
+
+3. Describe evidence
+* ? - Aside from "I've done it," which is only partially true, what is this?
+  Is this just theoretical?  I can't prove "this will help people start
+  testing," that's just conjecture.  I can prove my tricks make it easier to
+  test, though.
+
+4. Call to action (This is the meat!)
+* use test templates
+* keep components at arm's length
+* extract WrappedComponent from HOC
+* mock shit
+* loop and assert - breaking rules about 1 assertion per test
+* TDD pure logic, skip it for components
+* avoid complex tests
+
+5. New reality
