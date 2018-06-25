@@ -3,7 +3,6 @@ import * as logic from './logic'
 describe('logic', () => {
   // Group them well.  It will help when things go bad.
   it('should handle hasNumber', () => {
-    // CHEAT
     // Put both assertions here.  It's simple.
     // https://softwareengineering.stackexchange.com/a/7829/203348
     expect(logic.hasNumber('asdf')).toBe(false)
@@ -27,12 +26,13 @@ describe('logic', () => {
     // granularity of testing the individual elements.  It's way easier to test
     // the individual pieces.  Business logic like this should probably be
     // tested, but it's not as easy.  You tend to try fitting in lots of
-    // permutations. (hasNumber * hasUppercase * hasWhitespace)
+    // permutations. (hasNumber * hasUppercase * hasWhitespace) * 2
     expect(logic.isComplex('password')).toBe(false)
     expect(logic.isComplex('Passwor6')).toBe(true)
     // We're implicitly testing each of those other methods.  This test verifies
-    // that they've been applied the right way, but it's an expensive test.
-    // * redundant
-    // * fickle
+    // that they've been applied the right way, but it's expensive test.
+    // Being able to spot tests like this is a skill to work on.
+    // The test as is doesn't cover all the scenarios.
+    // If we add each scenario, the test becomes complex.
   })
 })
