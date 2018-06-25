@@ -114,3 +114,9 @@ significant changes or when you need a brain break.
 * Use shallow!
 
 Keep your tests visible while coding.  Always!
+
+Keep your tests next to your code.  Don't waste time managing mirrored file
+structures.
+
+If we can get into it, talk about separating thunks and business logic from
+action creators, reducers, etc.
