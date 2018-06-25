@@ -112,3 +112,5 @@ fit, fdescribe
 If it's cheap, keep them all running all the time, otherwise, run after
 significant changes or when you need a brain break.
 * Use shallow!
+
+Keep your tests visible while coding.  Always!
