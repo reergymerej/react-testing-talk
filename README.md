@@ -130,3 +130,11 @@ If your tests are bite sized, you can add more to a suite with a quick
 copy/paste, find/replace for a method name.
 
 Use silly/random/unique scalars to help you search.
+
+---
+
+Don't be afraid to delete tests.  Once a test becomes redundant because it's
+covered by another, toss it.
+
+test nested parsing, green
+test REALLY nested parsing, green (delete the previous)
