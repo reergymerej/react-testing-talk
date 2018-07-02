@@ -138,3 +138,7 @@ covered by another, toss it.
 
 test nested parsing, green
 test REALLY nested parsing, green (delete the previous)
+
+To that end, once you build up enough to test a properly exposed API, if it
+fully encloses some smaller part exported just for testing, stop exporting that
+part and delete those tests.  There is a cost to lots of tests.

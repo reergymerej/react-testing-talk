@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
+import PasswordHelper from './PasswordHelper'
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <p className="App-intro">
           Testing can be easy.
         </p>
+        <PasswordHelper />
       </div>
     )
   }
