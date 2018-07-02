@@ -12,7 +12,6 @@ class PasswordHelper extends React.Component {
 
   render() {
     const isComplex = logic.isComplex(this.state.value)
-    console.log(isComplex)
     return (
       <div>
         password helper
