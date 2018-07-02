@@ -1,5 +1,7 @@
 # React Testing Talk
 
+[![CircleCI](https://circleci.com/gh/MichaelDimmitt/react-testing-talk/tree/master.svg?style=shield)](https://circleci.com/gh/MichaelDimmitt/plugin-release/tree/master)
+
 https://www.meetup.com/React-JAX/events/251275752/
 
 This is where I'll prepare.  It will eventually become a companion repo to the
