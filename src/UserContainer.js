@@ -3,19 +3,14 @@ import { connect } from 'react-redux'
 import User from './User'
 
 class UserContainer extends React.Component {
-  handleLogin = () => {
-    this.props.login()
-  }
-
   render() {
-    const { user } = this.props
+    const { user, onLogin, onLogout } = this.props
     return (
-      <div>
-        <User
-          user={user}
-          onLogin={this.handleLogin}
-        />
-      </div>
+      <User
+        user={user}
+        onLogin={onLogin}
+        onLogout={onLogout}
+      />
     )
   }
 }
@@ -25,9 +20,15 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-  login() {
+  onLogin() {
     return {
       type: 'login',
+    }
+  },
+
+  onLogout() {
+    return {
+      type: 'logout',
     }
   },
 }

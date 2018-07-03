@@ -18,6 +18,8 @@ describe('<User />', () => {
       expect(wrapper.find('.login').length).toBe(1)
       expect(wrapper.find('.name').length).toBe(0)
       expect(wrapper.find('.logout').length).toBe(0)
+
+      // Change the props and check it again.
       wrapper.setProps({ user: 'Your Mom' })
       expect(wrapper.find('.login').length).toBe(0)
       expect(wrapper.find('.name').length).toBe(1)
