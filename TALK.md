@@ -144,3 +144,10 @@ Always red/green as fast as you can, especially when you're new to a framework.
       // eventually realize I messed up the test.
       expect(login).toHaveBeenCalled()
 ```
+
+Keep this handy.
+
+      console.log(wrapper.debug())
+
+
+Only use shallow.  mount is crazy.
