@@ -4,16 +4,33 @@ import { connect } from 'react-redux'
 const User = () => <div />
 
 class UserContainer extends React.Component {
+  handleLogin = () => {
+    this.props.login()
+  }
+
   render() {
     const { user } = this.props
     return (
       <div>
         <User
           user={user}
+          onLogin={this.handleLogin}
         />
       </div>
     )
   }
 }
 
-export default connect()(UserContainer)
+const mapStateToProps = (state) => ({
+  user: state.user,
+})
+
+const mapDispatchToProps = {
+  login() {
+    return {
+      type: 'login',
+    }
+  },
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserContainer)

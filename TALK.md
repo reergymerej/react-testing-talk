@@ -125,3 +125,22 @@ doing to ensure it's for the right reasons.
 There's a compainion repo and blog for this talk available at URLHERE if you'd
 like to reference it and experiment later.  Now let's spend a couple minutes
 with general QA.
+
+
+--- NOTES
+
+Don't worry about TDD when you don't know what you want.  Just write a test,
+even with bad describe/it text, even with crappy assertions.  It will often
+become clearer as you go.  Just get something written.
+
+
+Always red/green as fast as you can, especially when you're new to a framework.
+
+```
+      const login = jest.fn()
+      const wrapper = shallow(factory({ login }))
+      login()  // Yeah, duh.  This just verifies the test was written correctly.
+      // I don't know how many times I got lost debugging stuff only to
+      // eventually realize I messed up the test.
+      expect(login).toHaveBeenCalled()
+```
