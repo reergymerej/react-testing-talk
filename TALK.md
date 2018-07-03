@@ -40,12 +40,14 @@ reduce the cost of your tests.
 
 ---
 
-NOTE: At this point, I'll go over each of this with a brief description, code example,
+NOTE: At this point, I'll go over each of these with a brief description, code example,
 and maybe a tiny bit of demo.
 
 ---
 
 Avoid complex tests
+  TODO: Show find some examples.
+  TODO: Script this part.
   If something is just _too_ freaking hard to test, skip it.  You're not going
   for a Medal of Honor here.  Spend your limited time wisely.  Just remember
   going forward not to write code that's so hard to test.
