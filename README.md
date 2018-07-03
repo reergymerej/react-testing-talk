@@ -6,139 +6,88 @@ This is where I'll prepare.  It will eventually become a companion repo to the
 talk.
 
 
-## Main Idea
+## Scratch
 
-I've got pages of notes on a yellow pad.  Good stuff!
+This is NOT why you should test.
+This is NOT how to test.
+This IS how to write imperfect tests to minimize the cost.
 
-> Tests don't have to be perfect, they only require a net value.
+### Tricks
 
-
-Testing is often presented in a perfect environment.  In reality, people
-complain that it's not practical and end up dismissing testing altogether.
-Trying to be _too_ academic can prevent you from useful testing and put off
-others.
-
-Perfect test environments don't exist in real life.
-
-It's not about perfection.  It's about keeping the balance between cost and
-benefit.  There are techniques for this that we will discuss.
-
-**Costs**
-* maintenance
-* running time
-* complexity
-
-**Benefits**
-* confidence
-* TDD - better code structure
-
-
-## Timeline
-
-July 10 - Give talk
-
-July 8 - Practice talk in front of Jason
-July 7 - Practice talk in front of Amanda
-July 6 - Practice talk, with slides (record and rewatch)
-July 5 - Practice talk, with slides (record and rewatch)
-July 4 - Practice talk, with slides (record and rewatch)
-July 3 - Finish final draft
-	develop companion repo code
-	write companion blog
-	create slides
-
-  Rehearse with timer - edit down if needed
-  Rehearse with timer - edit down if needed
-  Rehearse with timer - edit down if needed
-  Rehearse with timer - edit down if needed
-
-June 26 - Finish first draft
-
-June 21 - Brainstorm, outline
-June 20 - Finalize idea
+* Avoid complex tests
+* Use templates
+* Export functions _just_ to test them.
+* Extract WrappedComponent from HOC
+* Use `instance` to test instance methods.
+* Keep components at arm's length
+* Loop and assert
+* Mock logic out of components
 
 ---
-Mon Jun 25 07:42:50 EDT 2018
 
+Avoid complex tests
+  If something is just _too_ freaking hard to test, skip it.  You're not going
+  for a Medal of Honor here.  Spend your limited time wisely.  Just remember
+  going forward not to write code that's so hard to test.
 
-### Outline
+  If you've got a pet monster, just feed it here and there.  Eventually, you can
+  refactor it into a better place.  Keep your eye on the cost/benefit ledger,
+  though.
 
-**Thesis** - The longterm benefit to a healthy test suite is widely
-acknowledged, but you need immediate payoff to get there.  There are techniques
-to tip the scales.
-
-We are not focusing on "it's hard to get started test," that's just a minor
-point.  We are focusing on "here's how to make testing more beneficial."
-
-
-Elaborate on the logic behind incentive.  Don't dwell too long, but pull in the
-human factor so people get a break from the tech.  Relate to them so they care.
-This is a sales pitch.  They need to understand the problem so they can buy the
-solution.
-
-
-1. Make them care
-* It's hard to test like they do in the movies.
-* You're a good guy, you want to do the right thing.
-
-2. Explain idea
-* Cost/benefit
-* The test suite will develop a type of inertia as it grows.  It is most
-  important to lessen costs at the very beginning.
-
-3. Describe evidence
-* ? - Aside from "I've done it," which is only partially true, what is this?
-  Is this just theoretical?  I can't prove "this will help people start
-  testing," that's just conjecture.  I can prove my tricks make it easier to
-  test, though.
-
-4. Call to action (This is the meat!)
-* use test templates
-  * pure logic
-  * plain components
+Use templates
+  Make it as easy as possible to write tests.
+  * logic
+  * components
   * HOC
-* keep components at arm's length
-* extract WrappedComponent from HOC
-* mock shit
-* loop and assert - breaking rules about 1 assertion per test
-* TDD pure logic, skip it for components
-* avoid complex tests
+  * Redux elements
 
-5. New reality
+Export functions _just_ to test them.
+  In a perfect world, you only test the external interface.  Consider the vile
+  crime of exporting an internal helper function _just_ so you can verify it
+  works.  Odds are, if you're in this position, that logic could/should
+  (eventually) stand alone, anyway, and should be in a helper file, exported
+  anyway.
 
+Extract WrappedComponent from HOC
+  Ignore all the `connect` stuff.  Just pull out the `WrappedComponent` and test
+  it like a regular component.  You're cutting out testing that the Redux
+  attributes are mapped to the appropriate props and maybe that you're using the
+  right selectors, but that's OK.  If those don't work, you'll see it in the UI
+  pretty plainly.  Those are wiring tests.
 
-----
+Use `instance` to test instance methods.
+  Yeah, you could tickle the component just right in order to execute a method
+  and then examine the component or the prop handlers to see what happened, but
+  that's hard.  If you are in this position, the component sucks already.  Cut
+  your losses and verify just that method.
 
+  For bonus points, once you know it works, make it a static and stop messing
+  with `instance`.  If you're messing with `instance`, you're already in
+  trouble.
 
-bail!  Don't run all the test, bail when one fails.
-fit, fdescribe
-If it's cheap, keep them all running all the time, otherwise, run after
-significant changes or when you need a brain break.
-* Use shallow!
+Keep components at arm's length
+  Try to focus on testing a component's functionality, not its form.  Avoid
+  selectors based on position or even tag name.  Prefer component `displayName`
+  or `className`.
 
-Keep your tests visible while coding.  Always!
+  You _can_ test that props end up mapped to a child accordingly, but that's not
+  really useful.  That's just wiring stuff that doesn't give you a big payoff.
+  It tends to lead to expensive to maintain tests.
 
-Keep your tests next to your code.  Don't waste time managing mirrored file
-structures.
+  You should be testing as an outside observer to the component.  Only mess with
+  it via props and triggering events on its children.  Make assertions based on
+  what handlers are triggered and what children you can find.  Inner concerns
+  like "wiring" are not your (test's) concern.  That's inside the black box.
+  Don't worry about how it maps the props you've given it to its children.  Try
+  not to even worry about _where_ the children are.
 
-If we can get into it, talk about separating thunks and business logic from
-action creators, reducers, etc.
+  In an ideal world, you would test all this stuff and know when anything was
+  out of place.  In real life, these "wiring" tests are expensive to maintain.
 
-Learn how to selectively run tests.
+Loop and assert
+  Tests that have one assertion are awesome.  But, use some cleverness to help
+  you out once in a while when you need it.
 
-If your tests are bite sized, you can add more to a suite with a quick
-copy/paste, find/replace for a method name.
-
-Use silly/random/unique scalars to help you search.
-
----
-
-Don't be afraid to delete tests.  Once a test becomes redundant because it's
-covered by another, toss it.
-
-test nested parsing, green
-test REALLY nested parsing, green (delete the previous)
-
-To that end, once you build up enough to test a properly exposed API, if it
-fully encloses some smaller part exported just for testing, stop exporting that
-part and delete those tests.  There is a cost to lots of tests.
+Mock logic out of components
+  This isn't a cheat.  This is just good practice.  One of the ways where the
+  right thing is actually the easy thing, too.
