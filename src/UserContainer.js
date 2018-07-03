@@ -1,13 +1,19 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
+const User = () => <div />
 
 class UserContainer extends React.Component {
   render() {
+    const { user } = this.props
     return (
       <div>
-        UserContainer
+        <User
+          user={user}
+        />
       </div>
     )
   }
 }
 
-export default UserContainer
+export default connect()(UserContainer)
