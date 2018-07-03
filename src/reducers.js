@@ -1,9 +1,22 @@
-const initialState = {
-  user: 'Mr. Magoo',
-}
+const initialState = {}
 
 const reducers = (state = initialState, action) => {
-  return state
+  switch (action.type) {
+    case 'login':
+      return {
+        ...state,
+        user: 'Mr. Magoo',
+      }
+
+    case 'logout':
+      return {
+        ...state,
+        user: null,
+      }
+
+    default:
+      return state
+  }
 }
 
 export default reducers

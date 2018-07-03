@@ -35,7 +35,7 @@ describe('<UserContainer />', () => {
     // If this is too much or you don't see the difference, don't worry about
     // it.  Skip these kinds of tests if you want!
     it('should map the user', () => {
-      const user = 'Big Bad Leroy Brown'
+      const user = 'Princess Belle'
       const wrapper = shallow(factory({ user }))
       const comp = wrapper.find('User')
       expect(comp.prop('user')).toBe(user)
