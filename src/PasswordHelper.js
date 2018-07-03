@@ -14,9 +14,12 @@ class PasswordHelper extends React.Component {
     const isComplex = logic.isComplex(this.state.value)
     return (
       <div>
-        password helper
         <input onChange={this.handleInputChange} />
-        { isComplex && <div className="isComplex" /> }
+        { isComplex &&
+          <div className="isComplex">
+            That looks OK.
+          </div>
+        }
       </div>
     )
   }

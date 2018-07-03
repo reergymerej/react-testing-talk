@@ -91,3 +91,21 @@ Loop and assert
 Mock logic out of components
   This isn't a cheat.  This is just good practice.  One of the ways where the
   right thing is actually the easy thing, too.
+
+
+## Outline
+
+Introduction
+  * me, my fondness for testing, perfectionism
+  * Explain thesis
+
+Content
+  For each point, where applicable:
+  * describe the advice
+  * explain how it's bad form
+  * show code example
+
+Recap
+  * Review thesis, enumerate tricks
+  * Refer to blog/repo for more details
+  * Questions
