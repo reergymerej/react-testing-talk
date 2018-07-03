@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
-const User = () => <div />
+import User from './User'
 
 class UserContainer extends React.Component {
   handleLogin = () => {
