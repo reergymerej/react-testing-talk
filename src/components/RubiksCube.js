@@ -44,9 +44,12 @@ class RubiksCube extends React.Component {
 
   render() {
     const { complete } = this.state
+    const completeClassName = complete ? 'complete' : 'incomplete'
     return (
-      <div className="RubiksCube">
-        The cube is { complete ? 'complete' : 'all mixed up' }.
+      <div className={`RubiksCube ${completeClassName}`}>
+        <button onClick={this.handleCornersFixed}>Solve Corners</button>
+        <button onClick={this.handleSideEdgesFixed}>Solve Edges</button>
+        <button onClick={this.handleCenterEdgesFixed}>Solve Middle</button>
       </div>
     )
   }

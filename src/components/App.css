@@ -1,6 +1,10 @@
 .App {
 }
 
+button {
+  font-size: 1.1em;
+}
+
 .App-header {
   background-color: #4476b7;
   color: white;
@@ -13,4 +17,21 @@
 }
 
 .App-header .user {
+}
+
+.RubiksCube {
+  width: 400px;
+  height: 400px;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.RubiksCube.complete {
+  background: url(/solved.jpg)
+}
+
+.RubiksCube.incomplete {
+  background: url(/unsolved.jpg)
 }
