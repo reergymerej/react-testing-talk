@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import User from '../components/User'
+import { actions } from '../redux'
 
 class UserContainer extends React.Component {
   render() {
@@ -20,17 +21,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-  onLogin() {
-    return {
-      type: 'login',
-    }
-  },
-
-  onLogout() {
-    return {
-      type: 'logout',
-    }
-  },
+  onLogin: actions.login,
+  onLogout: actions.logout,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserContainer)
