@@ -1,0 +1,9 @@
+import { reducer, actions } from './'
+
+describe('actions/reducer', () => {
+  it('should handle FOO', () => {
+    const action = actions.foo()
+    expect(reducer({}, action)).toEqual({
+    })
+  })
+})
