@@ -1,6 +1,6 @@
 # React Testing Talk
 
-[![CircleCI](https://circleci.com/gh/MichaelDimmitt/react-testing-talk/tree/master.svg?style=shield)](https://circleci.com/gh/MichaelDimmitt/plugin-release/tree/master)
+[![CircleCI 2.0](https://circleci.com/gh/MichaelDimmitt/react-testing-talk/tree/master.svg?style=shield)](https://circleci.com/gh/MichaelDimmitt/plugin-release/tree/master)
 [![CodeCov](https://img.shields.io/codecov/c/github/michaeldimmitt/react-testing-talk.svg)](https://codecov.io/gh/michaeldimmitt/react-testing-talk)
 
 https://www.meetup.com/React-JAX/events/251275752/
