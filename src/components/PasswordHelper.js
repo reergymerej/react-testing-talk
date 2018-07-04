@@ -1,5 +1,5 @@
 import React from 'react'
-import * as logic from './logic'
+import * as logic from '../logic'
 
 class PasswordHelper extends React.Component {
   state = {

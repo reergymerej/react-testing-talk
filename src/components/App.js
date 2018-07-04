@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import PasswordHelper from './PasswordHelper'
-import UserContainer from './UserContainer'
+import UserContainer from '../containers/UserContainer'
 
 class App extends Component {
   render() {

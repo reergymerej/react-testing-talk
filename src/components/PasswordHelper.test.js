@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import PasswordHelper from './PasswordHelper'
 
-jest.mock('./logic')
+jest.mock('../logic')
 
 const defaultProps = {}
 
@@ -14,7 +14,7 @@ describe('<PasswordHelper />', () => {
   it('should not show ".isComplex" once it is complex', () => {
     // Instead of leaking the "logic" into this component test, just test the
     // effects by mocking away the other module.
-    require('./logic').isComplex
+    require('../logic').isComplex
       .mockReturnValueOnce(false)
       .mockReturnValueOnce(true)
 
