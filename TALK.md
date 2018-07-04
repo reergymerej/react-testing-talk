@@ -46,7 +46,7 @@ and maybe a tiny bit of demo.
 ---
 
 Avoid complex tests
-  TODO: Show find some examples.
+  TODO: Find some examples.
   TODO: Script this part.
 
   If something is just _too_ freaking hard to test, skip it.  You're not going
@@ -85,7 +85,7 @@ Extract WrappedComponent from HOC
   pretty plainly.  Those are wiring tests.
 
 Use `instance` to test instance methods.
-  TODO: Make a big ass ugly component with lots of terrible logic.
+  ref: RubiksCube.js
 
   Yeah, you could tickle the component just right in order to execute a method
   and then examine the component or the prop handlers to see what happened, but
