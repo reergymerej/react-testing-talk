@@ -151,3 +151,11 @@ Keep this handy.
 
 
 Only use shallow.  mount is crazy.
+
+---
+Testing redux.  Test action creators and reducers.  Selectors are often too
+tedious.  Testing thunks is pretty painful, as you tend to end up testing
+various branches of AJAX calls and whatnot.  They end up being very complex,
+confusing, and brittle.  There's a goldmine of logic buried in there that needs
+testing, but it's hard to get to.  It's probably not worth the effort at first,
+if ever.
