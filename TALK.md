@@ -58,7 +58,7 @@ Avoid complex tests
   though.
 
 Use templates
-  test.template.*
+  ref: test.template.*
 
   Make it as easy as possible to write tests.
   * logic
@@ -67,7 +67,7 @@ Use templates
   * Redux elements
 
 Export functions _just_ to test them.
-  logic.test.js
+  ref: logic.test.js
 
   In a perfect world, you only test the external interface.  Consider the vile
   crime of exporting an internal helper function _just_ so you can verify it
@@ -76,7 +76,7 @@ Export functions _just_ to test them.
   anyway.
 
 Extract WrappedComponent from HOC
-  UserContainer.test.js
+  ref: UserContainer.test.js
 
   Ignore all the `connect` stuff.  Just pull out the `WrappedComponent` and test
   it like a regular component.  You're cutting out testing that the Redux
@@ -130,6 +130,8 @@ Loop and assert
   by a similar set of rules.
 
 Mock logic out of components
+  ref: PasswordHelper.jestjs
+
   This isn't really a cheat; it's just good advice.
 
   This isn't a cheat.  This is just good practice.  One of the ways where the
@@ -150,11 +152,32 @@ with general QA.
 
 --- NOTES
 
-Don't worry about TDD when you don't know what you want.  Just write a test,
+A lot of this may be practical advice or general TDD advice.  It doesn't really
+fit in the talk, but it's good info.
+
+
+Don't worry about TDD when you don't know what you want.  Just freaking
+experiment.  If you're wise, though, once you get the idea, you should start
+testing.  (TDD advice: Test written _after_ the implementation miss a huge chunk
+of the benefit.)
+
+Just write a test,
 even with bad describe/it text, even with crappy assertions.  It will often
 become clearer as you go.  Just get something written.
 
+I have honestly written this test more times than I can remember.  It's a
+starting point to help clarify your thoughts.
 
+```js
+describe('whatever', () => {
+  it('should work', () => {
+    expect(1).toBe(0)
+  })
+})
+```
+
+
+This is general TDD advice.  It does help keep tests cheap, though.
 Always red/green as fast as you can, especially when you're new to a framework.
 
 ```
@@ -166,12 +189,16 @@ Always red/green as fast as you can, especially when you're new to a framework.
       expect(login).toHaveBeenCalled()
 ```
 
-Keep this handy.
+Learn how to debug your tests as soon as you can.  Knowing how will reduce costs
+tremendously when starting out.
+
+Keep this handy for Enzyme.
 
       console.log(wrapper.debug())
 
 
 Only use shallow.  mount is crazy.
+
 
 ---
 Testing redux.  Test action creators and reducers.  Selectors are often too

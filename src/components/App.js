@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import PasswordHelper from './PasswordHelper'
 import UserContainer from '../containers/UserContainer'
+import RubiksCube from './RubiksCube'
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
         </p>
         <PasswordHelper />
 
+        <RubiksCube />
       </div>
     )
   }
