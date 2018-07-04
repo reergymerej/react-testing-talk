@@ -30,9 +30,14 @@ describe('logic', () => {
     expect(logic.isComplex('password')).toBe(false)
     expect(logic.isComplex('Passwor6')).toBe(true)
     // We're implicitly testing each of those other methods.  This test verifies
-    // that they've been applied the right way, but it's expensive test.
+    // that they've been applied the right way, but it's expensive.
     // Being able to spot tests like this is a skill to work on.
     // The test as is doesn't cover all the scenarios.
-    // If we add each scenario, the test becomes complex.
+    // If we add each scenario, the test becomes very complex.
+    //
+    // Instead of being a purist, and testing only via the public interface,
+    // export the component elements and test them.  If they're nice and
+    // reusable, they'll probably end up gathered in their own module later,
+    // exposed as proper interface points anyway.
   })
 })

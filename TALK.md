@@ -48,6 +48,7 @@ and maybe a tiny bit of demo.
 Avoid complex tests
   TODO: Show find some examples.
   TODO: Script this part.
+
   If something is just _too_ freaking hard to test, skip it.  You're not going
   for a Medal of Honor here.  Spend your limited time wisely.  Just remember
   going forward not to write code that's so hard to test.
@@ -57,6 +58,8 @@ Avoid complex tests
   though.
 
 Use templates
+  test.template.*
+
   Make it as easy as possible to write tests.
   * logic
   * components
@@ -64,6 +67,8 @@ Use templates
   * Redux elements
 
 Export functions _just_ to test them.
+  logic.test.js
+
   In a perfect world, you only test the external interface.  Consider the vile
   crime of exporting an internal helper function _just_ so you can verify it
   works.  Odds are, if you're in this position, that logic could/should
@@ -71,6 +76,8 @@ Export functions _just_ to test them.
   anyway.
 
 Extract WrappedComponent from HOC
+  UserContainer.test.js
+
   Ignore all the `connect` stuff.  Just pull out the `WrappedComponent` and test
   it like a regular component.  You're cutting out testing that the Redux
   attributes are mapped to the appropriate props and maybe that you're using the
@@ -78,6 +85,8 @@ Extract WrappedComponent from HOC
   pretty plainly.  Those are wiring tests.
 
 Use `instance` to test instance methods.
+  TODO: Make a big ass ugly component with lots of terrible logic.
+
   Yeah, you could tickle the component just right in order to execute a method
   and then examine the component or the prop handlers to see what happened, but
   that's hard.  If you are in this position, the component sucks already.  Cut
@@ -88,6 +97,11 @@ Use `instance` to test instance methods.
   trouble.
 
 Keep components at arm's length
+  good: User.js
+  bad: TODO:
+
+  This isn't really a cheat; it's just good advice.
+
   Try to focus on testing a component's functionality, not its form.  Avoid
   selectors based on position or even tag name.  Prefer component `displayName`
   or `className`.
@@ -107,10 +121,17 @@ Keep components at arm's length
   out of place.  In real life, these "wiring" tests are expensive to maintain.
 
 Loop and assert
+  TODO: Contrive a scenario that would be good for looping.
+
   Tests that have one assertion are awesome.  But, use some cleverness to help
   you out once in a while when you need it.
 
+  Fuzz testing is an example.  So is verifying that a bunch of items all behave
+  by a similar set of rules.
+
 Mock logic out of components
+  This isn't really a cheat; it's just good advice.
+
   This isn't a cheat.  This is just good practice.  One of the ways where the
   right thing is actually the easy thing, too.
 
