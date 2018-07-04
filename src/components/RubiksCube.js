@@ -18,28 +18,43 @@ class RubiksCube extends React.Component {
   isSolved = () => {
     const { corners, sideEdges, centerEdges } = this.state
     return  (corners && sideEdges && centerEdges)
-    || isSolved(this.squares)
+      || isSolved(this.squares)
   }
 
   handleCornersFixed = () => {
-    this.setState({ corners: true })
-    if (this.isSolved()) {
-      this.props.onComplete()
-    }
+    this.setState({ corners: true }, () => {
+      if (this.isSolved()) {
+        this.setState({ complete: true })
+        this.props.onComplete()
+      }
+    })
   }
 
   handleSideEdgesFixed = () => {
-    this.setState({ sideEdges: true })
-    if (this.isSolved()) {
-      this.props.onComplete()
-    }
+    this.setState({ sideEdges: true }, () => {
+      if (this.isSolved()) {
+        this.setState({ complete: true })
+        this.props.onComplete()
+      }
+    })
   }
 
   handleCenterEdgesFixed = () => {
-    this.setState({ centerEdges: true })
-    if (this.isSolved()) {
-      this.props.onComplete()
-    }
+    this.setState({ centerEdges: true }, () => {
+      if (this.isSolved()) {
+        this.setState({ complete: true })
+        this.props.onComplete()
+      }
+    })
+  }
+
+  handleScrambleClick = () => {
+    this.setState({
+      corners: false,
+      sideEdges: false,
+      centerEdges: false,
+      complete: false,
+    })
   }
 
   render() {
@@ -47,12 +62,21 @@ class RubiksCube extends React.Component {
     const completeClassName = complete ? 'complete' : 'incomplete'
     return (
       <div className={`RubiksCube ${completeClassName}`}>
-        <button onClick={this.handleCornersFixed}>Solve Corners</button>
-        <button onClick={this.handleSideEdgesFixed}>Solve Edges</button>
-        <button onClick={this.handleCenterEdgesFixed}>Solve Middle</button>
+        <div>
+          <button onClick={this.handleCornersFixed}>Solve Corners</button>
+          <button onClick={this.handleSideEdgesFixed}>Solve Edges</button>
+          <button onClick={this.handleCenterEdgesFixed}>Solve Middle</button>
+        </div>
+        <div>
+          <button onClick={this.handleScrambleClick}>Scramble</button>
+        </div>
       </div>
     )
   }
+}
+
+RubiksCube.defaultProps = {
+  onComplete() {},
 }
 
 export default RubiksCube

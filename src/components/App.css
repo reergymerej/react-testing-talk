@@ -24,6 +24,12 @@ button {
   height: 400px;
   background: #333;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.RubiksCube div {
+  display: flex;
   align-items: center;
   justify-content: space-around;
 }

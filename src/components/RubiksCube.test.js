@@ -50,4 +50,23 @@ describe('<RubiksCube />', () => {
     // expect(wrapper.find('.complete').length).toBe(0)
     // expect(wrapper.find('.incomplete').length).toBe(1)
   })
+
+  // loop example
+  // We have a bunch of methods, each of which share some behavior.  We want to
+  // test that.  We can use a loop for convenience.
+  // TODO: Test all the handle*Fixed methods
+
+  it('should scrambple up the cube', () => {
+    // This test isn't perfect, but it's OK.  We're using setState directly, we
+    // don't verify that .complete is present initially, we are selecting
+    // components based on index (bad idea for maintenance consts).
+    const wrapper = shallow(factory())
+    wrapper.setState({ complete: true })
+    wrapper.find('button').at(3).simulate('click')
+    expect(wrapper.find('.complete').length).toBe(0)
+    // That's OK, though.  This test _is_ adding value, even if it's imperfect.
+    // It was cheap to create and won't cost too much with maintenance.  This is
+    // a great stepping stone toward awesome tests.
+  })
 })
+
