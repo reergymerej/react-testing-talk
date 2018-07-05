@@ -11,10 +11,6 @@ const factory = (props = {}) => (
 )
 
 describe('<TickleMe />', () => {
-  it('should render', () => {
-    shallow(factory())
-  })
-
   // confusing props
   xit('should call "sniffFlower" with the weasel\'s favorite', () => {
     const sniffFlower = jest.fn()
