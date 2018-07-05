@@ -1,8 +1,7 @@
 import React from 'react'
 
-const isSolved = () => {
-  // You didn't really think I'd fill this in did you?
-  // Send me a PR.  ;)
+const isSolved = (squares) => {
+  // I'll gladly review PRs for this.
   return false
 }
 
@@ -23,7 +22,7 @@ class RubiksCube extends React.Component {
 
   handleCornersFixed = () => {
     this.setState({ corners: true }, () => {
-      if (this.isSolved()) {
+      if (this.isSolved(this.squares)) {
         this.setState({ complete: true })
         this.props.onComplete()
       }
@@ -32,7 +31,7 @@ class RubiksCube extends React.Component {
 
   handleSideEdgesFixed = () => {
     this.setState({ sideEdges: true }, () => {
-      if (this.isSolved()) {
+      if (this.isSolved(this.squares)) {
         this.setState({ complete: true })
         this.props.onComplete()
       }
@@ -41,7 +40,7 @@ class RubiksCube extends React.Component {
 
   handleCenterEdgesFixed = () => {
     this.setState({ centerEdges: true }, () => {
-      if (this.isSolved()) {
+      if (this.isSolved(this.squares)) {
         this.setState({ complete: true })
         this.props.onComplete()
       }

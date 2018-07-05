@@ -59,6 +59,7 @@ Avoid complex tests
 
 Use templates
   ref: test.template.*
+  Yes, copy and paste.
 
   Make it as easy as possible to write tests.
   * logic
@@ -69,11 +70,15 @@ Use templates
 Export functions _just_ to test them.
   ref: logic.test.js
 
+  It's a high crime.
+
   In a perfect world, you only test the external interface.  Consider the vile
   crime of exporting an internal helper function _just_ so you can verify it
   works.  Odds are, if you're in this position, that logic could/should
   (eventually) stand alone, anyway, and should be in a helper file, exported
   anyway.
+
+  Exporting here is a half measure toward better structure.
 
 Extract WrappedComponent from HOC
   ref: UserContainer.test.js
@@ -82,7 +87,7 @@ Extract WrappedComponent from HOC
   it like a regular component.  You're cutting out testing that the Redux
   attributes are mapped to the appropriate props and maybe that you're using the
   right selectors, but that's OK.  If those don't work, you'll see it in the UI
-  pretty plainly.  Those are wiring tests.
+  pretty plainly.
 
 Use `instance` to test instance methods.
   ref: RubiksCube.js
@@ -94,31 +99,8 @@ Use `instance` to test instance methods.
 
   For bonus points, once you know it works, make it a static and stop messing
   with `instance`.  If you're messing with `instance`, you're already in
-  trouble.
-
-Keep components at arm's length
-  good: User.js
-  bad: TODO:
-
-  This isn't really a cheat; it's just good advice.
-
-  Try to focus on testing a component's functionality, not its form.  Avoid
-  selectors based on position or even tag name.  Prefer component `displayName`
-  or `className`.
-
-  You _can_ test that props end up mapped to a child accordingly, but that's not
-  really useful.  That's just wiring stuff that doesn't give you a big payoff.
-  It tends to lead to expensive to maintain tests.
-
-  You should be testing as an outside observer to the component.  Only mess with
-  it via props and triggering events on its children.  Make assertions based on
-  what handlers are triggered and what children you can find.  Inner concerns
-  like "wiring" are not your (test's) concern.  That's inside the black box.
-  Don't worry about how it maps the props you've given it to its children.  Try
-  not to even worry about _where_ the children are.
-
-  In an ideal world, you would test all this stuff and know when anything was
-  out of place.  In real life, these "wiring" tests are expensive to maintain.
+  trouble.  Don't bother trying to be perfect once you're already down this
+  path.
 
 Loop and assert
   TODO: Contrive a scenario that would be good for looping.
@@ -128,15 +110,6 @@ Loop and assert
 
   Fuzz testing is an example.  So is verifying that a bunch of items all behave
   by a similar set of rules.
-
-Mock logic out of components
-  ref: PasswordHelper.jestjs
-
-  This isn't really a cheat; it's just good advice.
-
-  This isn't a cheat.  This is just good practice.  One of the ways where the
-  right thing is actually the easy thing, too.
-
 
 ---
 
@@ -152,14 +125,9 @@ with general QA.
 
 --- NOTES
 
-A lot of this may be practical advice or general TDD advice.  It doesn't really
-fit in the talk, but it's good info.
-
-
 Don't worry about TDD when you don't know what you want.  Just freaking
 experiment.  If you're wise, though, once you get the idea, you should start
-testing.  (TDD advice: Test written _after_ the implementation miss a huge chunk
-of the benefit.)
+testing.
 
 Just write a test,
 even with bad describe/it text, even with crappy assertions.  It will often
@@ -176,30 +144,6 @@ describe('whatever', () => {
 })
 ```
 
-
-This is general TDD advice.  It does help keep tests cheap, though.
-Always red/green as fast as you can, especially when you're new to a framework.
-
-```
-      const login = jest.fn()
-      const wrapper = shallow(factory({ login }))
-      login()  // Yeah, duh.  This just verifies the test was written correctly.
-      // I don't know how many times I got lost debugging stuff only to
-      // eventually realize I messed up the test.
-      expect(login).toHaveBeenCalled()
-```
-
-Learn how to debug your tests as soon as you can.  Knowing how will reduce costs
-tremendously when starting out.
-
-Keep this handy for Enzyme.
-
-      console.log(wrapper.debug())
-
-
-Only use shallow.  mount is crazy.
-
-
 ---
 Testing redux.  Test action creators and reducers.  Selectors are often too
 tedious.  Testing thunks is pretty painful, as you tend to end up testing
@@ -207,3 +151,4 @@ various branches of AJAX calls and whatnot.  They end up being very complex,
 confusing, and brittle.  There's a goldmine of logic buried in there that needs
 testing, but it's hard to get to.  It's probably not worth the effort at first,
 if ever.
+
