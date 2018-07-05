@@ -105,7 +105,9 @@ class TickleMe extends React.Component<Props, State> {
           this.onMeditateError()
         }
       } else {
-        this.props.sniffFlower(weasel.id, pilotId, orgPilotId)
+        /// FIXME: This is a bug.  We need to send the weasel's favorite.
+        // this.props.sniffFlower(weasel.id)
+        this.props.sniffFlower(weasel.id)
       }
     } else {
       this.setState({ isWaitingForAuthToMeditate: true })

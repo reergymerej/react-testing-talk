@@ -102,6 +102,10 @@ Use `instance` to test instance methods.
   trouble.  Don't bother trying to be perfect once you're already down this
   path.
 
+
+  ref: TickleMe.js
+  This component is a disaster.
+
 Loop and assert
   TODO: Contrive a scenario that would be good for looping.
 
