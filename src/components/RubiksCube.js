@@ -62,12 +62,12 @@ class RubiksCube extends React.Component {
     return (
       <div className={`RubiksCube ${completeClassName}`}>
         <div>
+          <button onClick={this.handleScrambleClick}>Scramble</button>
+        </div>
+        <div>
           <button onClick={this.handleCornersFixed}>Solve Corners</button>
           <button onClick={this.handleSideEdgesFixed}>Solve Edges</button>
           <button onClick={this.handleCenterEdgesFixed}>Solve Middle</button>
-        </div>
-        <div>
-          <button onClick={this.handleScrambleClick}>Scramble</button>
         </div>
       </div>
     )

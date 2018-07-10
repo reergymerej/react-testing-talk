@@ -24,9 +24,11 @@ const mapStateToProps = (state) => ({
   user: state.root.user,
 })
 
-const mapDispatchToProps = {
+export const mapDispatchToProps = {
   onLogin: actions.login,
   onLogout: actions.logout,
 }
+
+export { UserContainer }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserContainer)

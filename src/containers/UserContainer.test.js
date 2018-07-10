@@ -1,11 +1,11 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import UserContainer from './UserContainer'
+import { UserContainer, mapDispatchToProps } from './UserContainer'
 
 const defaultProps = {}
 
 const factory = (props = {}) => (
-  <UserContainer.WrappedComponent {...defaultProps} {...props} />
+  <UserContainer {...defaultProps} {...props} />
 )
 
 describe('<UserContainer />', () => {
@@ -30,5 +30,10 @@ describe('<UserContainer />', () => {
       const comp = wrapper.find('User')
       expect(comp.prop('user')).toBe(user)
     })
+  })
+
+  it('should mapDispatchToProps correctly', () => {
+    expect(mapDispatchToProps.onLogin).toBeDefined()
+    expect(mapDispatchToProps.onLogout).toBeDefined()
   })
 })
