@@ -1,6 +1,7 @@
 # React Testing Talk
 
 https://www.meetup.com/React-JAX/events/251275752/
+https://www.youtube.com/watch?v=yqkOlMtr-gs
 
 This is NOT why you should test.
 
