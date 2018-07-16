@@ -1,5 +1,8 @@
 # React Testing Talk
 
+[![CircleCI](https://circleci.com/gh/MichaelDimmitt/react-testing-talk/tree/master.svg?style=shield)](https://circleci.com/gh/MichaelDimmitt/plugin-release/tree/master)
+[![CodeCov](https://img.shields.io/codecov/c/github/reergymerej/react-testing-talk.svg)](https://codecov.io/gh/reergymerej/react-testing-talk)
+
 https://www.meetup.com/React-JAX/events/251275752/
 https://www.youtube.com/watch?v=yqkOlMtr-gs
 
